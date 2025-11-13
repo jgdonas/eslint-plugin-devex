@@ -1,0 +1,16 @@
+{
+  "name": "test-lint-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "eslint-plugin-devex": "file:../eslint-plugin-devex"
+  }
+}

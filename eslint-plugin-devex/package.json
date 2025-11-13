@@ -1,0 +1,20 @@
+{
+  "name": "eslint-plugin-devex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts --format cjs --dts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/estree": "^1.0.8",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
