@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-devex",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@jose.donas/eslint-plugin-devex",
+  "version": "0.1.0",
+  "description": "This project is a short learning experiment designed to demystify the Abstract Syntax Tree (AST) and introduce you to building your own ESLint plugins",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,8 +9,21 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
-  "keywords": [],
-  "author": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgdonas/eslint-plugin-devex"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "ast",
+    "typescript",
+    "linting"
+  ],
+  "author": "Jose Antonio González Doñas <jose.gonzalez.donas@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/eslint": "^9.6.1",
