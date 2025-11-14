@@ -7,7 +7,7 @@ const rule: Rule.RuleModule = {
     docs: {
       description: 'Disallow the use of console.log',
       recommended: true,
-      url: 'https://github.com/jgdonas/eslint-plugin-devex/docs/rules/no-console-log.md', // (Optional: TODO)
+      url: 'https://github.com/jgdonas/eslint-plugin-devex/docs/rules/no-console-log.md',
     },
     schema: [], // No options for this rule
     fixable: 'code',
