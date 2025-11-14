@@ -1,5 +1,4 @@
 import { Rule } from 'eslint';
-import { CallExpression } from 'estree';
 
 const rule: Rule.RuleModule = {
   // meta: Information about the rule
@@ -11,10 +10,11 @@ const rule: Rule.RuleModule = {
       url: 'https://github.com/your-repo/eslint-plugin-devex/docs/rules/no-console-log.md', // (Optional: TODO)
     },
     schema: [], // No options for this rule
+    fixable: 'code',
   },
 
   // create: The function that does the work
-  create: (context) => {
+  create: (context): Rule.RuleListener => {
     // `context` is an object with helpers.
     // The most important one is context.report()
 
@@ -22,7 +22,7 @@ const rule: Rule.RuleModule = {
     // We tell ESLint what "nodes" we want to visit as it
     // walks the AST.
     return {
-      CallExpression(node: CallExpression) {
+      CallExpression(node) {
         if (node.callee.type !== 'MemberExpression') {
           return; // Not `object.property()`, so we don't care.
         }
@@ -42,6 +42,11 @@ const rule: Rule.RuleModule = {
           context.report({
             node,
             message: 'Using console.log is not allowed.',
+            fix(fixer: Rule.RuleFixer) {
+              // We want to remove the entire `console.log()` statement.
+              // Since it's a standalone statement, we remove its parent node.
+              return fixer.remove(node.parent);
+            },
           });
         }
       },
