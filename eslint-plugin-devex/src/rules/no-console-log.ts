@@ -35,20 +35,16 @@ const rule: Rule.RuleModule = {
           return; // It's dynamic, like `console['log']()`
         }
 
-        
         // Now we know we have a structure like `A.B()`
         // Is the object name "console"?
         // AND Is the property name "log"?
-        if (
-          node.callee.object.name === 'console' &&
-          node.callee.property.name === 'log'
-        ) {
+        if (node.callee.object.name === 'console' && node.callee.property.name === 'log') {
           context.report({
             node,
             message: 'Using console.log is not allowed.',
           });
         }
-      } 
+      },
     };
   },
 };
